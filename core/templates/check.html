@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Start quiz</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+  <div class="container1" style="color: black">
+    thank you {{ users.firstname }}!
+    <p><a href="{%url 'logout' %}">logout</a></p>
+
+
+<h1>Quiz check</h1>
+<hr>
+   {% for adrs in adr %}
+     <br>Questions:  {{adrs.question}}<br>
+     answer:  {{adrs.answer}}<br>
+     {% endfor %}
+     {% for adrss in adrs %}
+     your answer:{{adrss.entered_answer}}<br>
+     {% endfor %}
+{% endblock %}

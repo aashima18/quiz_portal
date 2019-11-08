@@ -1,0 +1,29 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Start quiz</h2>
+    <h4><i>Interactive Quiz⋅10 Questions By John Sturtz<i></h4>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+  </div>
+
+
+<div class="container1">
+  
+
+
+The quiz contains 10 questions and there is time limit of 2 minutes on each question. You’ll get 1 point for each correct answer. At the end of the quiz, you’ll receive a total score. The maximum score is 100%. Good luck!
+</div>
+  <form method="post">
+{% csrf_token %}
+<input type="hidden" name="username" value="{{ user.username }}" />
+
+
+<input type="submit" value="start quiz"  style="margin-left:45%;box-shadow: rgba(0,0,0,.3) 0 0 10px;"/>
+</form>
+   
+
+{% endblock %}

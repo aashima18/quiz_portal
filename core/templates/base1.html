@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Fusion - Bootstrap 4 Template</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'as/css/bootstrap.min.css' %}" >
+    <!-- Icon -->
+    <link rel="stylesheet" href="{% static 'as/fonts/line-icons.css' %}">
+    
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="{% static 'as/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'as/css/owl.theme.css' %}">
+    
+    <!-- Animate -->
+    <link rel="stylesheet" href="{% static 'as/css/animate.css' %}">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{% static 'as/css/main.css' %}">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="{% static 'as/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'as/css/layout.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+  </head>
+  <body>
+
+    <!-- Header Area wrapper Starts -->
+  <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light" Style="position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width:100%;
+    z-index: 1030;">
+        <div class="container" Style="background-color: #18354c;padding: 0 .75rem;">
+          <a class="navbar-brand absolute" href="{% url 'indexx' %}">Skwela</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'indexx' %}">Home</a>
+              </li>
+             
+             
+            <ul class="navbar-nav absolute-right">
+              <li class="nav-item">
+                <a href="{% url 'indexx' %}" class="nav-link">{{ user.username }}</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+    <!-- Header Area wrapper End -->
+
+    <!-- Services Section Start -->
+    <section id="services" class="">
+          <!-- Services item -->
+          {% block content %}
+
+          {% endblock %}
+    </section>
+    <!-- Services Section End -->
+
+    
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'as/js/jquery-min.js' %}"></script>
+    <script src="{% static 'as/js/popper.min.js' %}"></script>
+    <script src="{% static 'as/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'as/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'as/js/wow.js' %}"></script>
+    <script src="{% static 'as/js/jquery.nav.js' %}"></script>
+    <script src="{% static 'as/js/scrolling-nav.js' %}"></script>
+    <script src="{% static 'as/js/jquery.easing.min.js' %}"></script>  
+    <script src="{% static 'as/js/main.js' %}"></script>
+    <script src="{% static 'as/js/form-validator.min.js' %}"></script>
+   
+    <!-- <script src="{% static 'js/contact-form-script.min.js' %}"></script> -->
+      
+  </body>
+</html>

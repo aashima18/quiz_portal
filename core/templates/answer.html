@@ -1,0 +1,24 @@
+
+{% extends 'base1.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center" style="color: black;">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s" style="color: black;margin-left:0px;">Your Score</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+    <p style="color: deepskyblue;font-size: 18px;">Number of questions : 10 | Time : 20 minutes</p>
+  </div>
+
+
+<div class="container1" style="color: black;height:300px;">
+    {% comment %} <p><a href="{%url 'logout' %}">logout</a></p> {% endcomment %}
+    thank you {{user}}!
+    <h3 style="color:black;font-size: 1.75rem;text-align: center;margin-top: inherit;font-style: oblique;font-family: -webkit-body;">Your score is :{{score}}</h3>
+    <h3 style="color:black;font-size: 1.75rem;text-align: center;margin-top: inherit;font-style: oblique;font-family: -webkit-body;">Maximum marks:50</h3>
+    
+    <a href="{% url 'check_answers' user.id %}"><button  type="submit" style= "float: right;background: #05acd6;padding: 10px 20px;cursor: pointer;border-radius: 4px;">Check Right Answer</button></a></td>  
+
+</div>
+
+{% endblock %}

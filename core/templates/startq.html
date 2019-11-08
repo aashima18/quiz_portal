@@ -1,0 +1,58 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+
+
+<div class="section-header text-center">
+    <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Best of luck {{ user }}</h2>
+    <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+     <p style="color: deepskyblue;font-size: 18px;">Number of questions : 10 | Time : 20 minutes</p>
+  </div>
+
+
+<div class="container1" style="color: black;height: 350px">
+   <p style="font-weight: bolder;font-family: 'Open Sans',sans-serif;margin: 0px;float:right;font-size: larger;">Time Left: <span id="idPTimeDuration"></span><br><p>
+    
+
+    <form action = "" method = "POST" >
+             
+     <div class = 'question' style="border: #dcdcdc 5px solid;margin-block-end: 10px;margin-top: 30px;font-size: 18px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px;background: ghostwhite;">Question : {{ question.questions }} </div><br>
+     <div id= "choices" class='select'>
+      <input  type = "radio" name="ans" value="{{question.choice_one}}">{{question.choice_one}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_two}}">{{question.choice_two}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_three}}">{{question.choice_three}}<br>
+      <input type = "radio" name="ans" value="{{question.choice_four}}">{{question.choice_four}}<br>
+      <input id="idFirstRadio" type = "radio" name="ans" value="{{question.choice_five}}"style="display: none";><br>
+      
+      <br> 
+      
+          
+      {% csrf_token %}
+    </form>
+    <a href="{% url 'answers' %}"></a><button id="idSubmitButton" type="submit" style= "float: right;background: #05acd6;padding: 10px 20px;cursor: pointer;border-radius: 4px;">submit</button></a></td>  
+    <a href="{% url 'questions' %}?ans"></a><button id="idNextButton" type="submit" style= "float: right;background: #05acd6;padding: 10px 20px;cursor: pointer;border-radius: 4px;">Next</button></a></td>  
+     
+    
+     
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+        $("#idFirstRadio").prop("checked", true);
+
+        setInterval(function() {
+              $("#idNextButton").click();
+        }, 10000);
+
+        var timeS = 10
+        $("#idPTimeDuration").html(timeS)
+        setInterval(function() {
+            timeS--;
+            $("#idPTimeDuration").html(timeS)
+        }, 1000);
+        idPTimeDuration
+    
+    });
+</script> 
+{% endblock %}
