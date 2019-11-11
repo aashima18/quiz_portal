@@ -55,8 +55,6 @@ def start_quiz(request):
     user = request.user
     user1 = User.objects.get(id=user.id)
     users = Score.objects.filter(student_id=user1.id)
-    
-    
     form = StartForm(request.POST)
     if form.is_valid():
         if not users:
@@ -131,10 +129,3 @@ def check_answer(request,user_id):
 
 
 
-def logout(request):
-   try:
-      del request.session['name']
-      request.session.flush()
-   except:
-      pass
-   return render(request, "logout.html")    
